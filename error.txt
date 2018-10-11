@@ -1,0 +1,10 @@
+selpg: 2nd arg should be -e=end_page
+Usage error!
+Usage:	selpg -s Number -e Number [options] [filename]
+
+	-s=Number	开始页数(开始<=结束)
+	-e=Number	结束页数(开始<=结束)
+	-l=Number	每页行数(可选)，默认72
+	-f		是否用换页符来换页(可选)
+	[filename]	从文件读，省略为标准输入
+
