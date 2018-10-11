@@ -139,7 +139,11 @@ func processInput(psa *selpg_args) {
 				line_ctr = 1
 			}
 			if page_ctr >= psa.start_page && page_ctr <= psa.end_page {
-				fmt.Fprintf(fout, "%s", line)
+				if psa.print_dest != "" {
+					stdin.Write([]byte(line))
+				} else {
+					fmt.Fprintf(fout, "%s", line)
+				}
 			}
 		}
 	} else {
@@ -153,7 +157,11 @@ func processInput(psa *selpg_args) {
 				page_ctr++
 			}
 			if page_ctr >= psa.start_page && page_ctr <= psa.end_page {
-				fmt.Fprintf(fout, "%c", c)
+				if psa.print_dest != "" {
+					stdin.Write([]byte{c})
+				} else {
+					fmt.Fprintf(fout, "%c", c)
+				}
 			}
 		}
 		fmt.Print("\n")
