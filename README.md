@@ -107,4 +107,3 @@ selpg -s start_page -e end_page [-f | -l lines_per_page] [-d dest] [in_filename]
 * `selpg -s 2 -e 4 in.txt > out.txt 2> error.txt &`
 
 ![](images/17.jpg)
-
